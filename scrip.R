@@ -90,3 +90,6 @@ boxplot(Xp,main="con 5 va")
 hist(Xp,main="histograma con 500")
 qqnorm(Xp,main="qqnorm xp con 500")
 qqnorm(mat, main="qnorm mat con 500")
+
+boxplot(mat)
+boxplot(Xp)
