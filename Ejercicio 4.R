@@ -4,8 +4,8 @@ XpN2 = numeric(1000)
 XpN5 = numeric(1000)
 XpN30 = numeric(1000)
 XpN500 = numeric(1000)
-N <- 100
-P <- 1/5
+N <- 6
+P <- 1/9
 EX1 <- N*P
 VX1 <- N*P*(1-P)
 
@@ -56,6 +56,7 @@ for (i in 1:1000){
   XpN500[i] = mean(rbinom(n=n, size=N, prob=P))
 }
 qqnorm(XpN500, main="QQ-Plot")
+qqline(XpN500, col="red");
 hist(XpN500, main="Histrograma",prob=T)
 boxplot(XpN500,main="Boxplot")
 
@@ -76,10 +77,20 @@ boxplot(XpN2estandarizada,main="Boxplot estandarizado N=2")
 boxplot(XpN5estandarizada,main="Boxplot estandarizado N=5")
 boxplot(XpN30estandarizada,main="Boxplot estandarizado N=30")
 boxplot(XpN500estandarizada,main="Boxplot estandarizado N=500")
+
+
 qqnorm(XpN2estandarizada,main="QQ-Plot estandarizado N=2")
+qqline(XpN2estandarizada,col="red")
+
+
 qqnorm(XpN5estandarizada,main="QQ-Plot estandarizado N=5")
+qqline(XpN5estandarizada,col="red")
+
 qqnorm(XpN30estandarizada,main="QQ-Plot estandarizado N=30")
+qqline(XpN30estandarizada,col="red")
+
 qqnorm(XpN500estandarizada,main="QQ-Plot estandarizado N=500")
+qqline(XpN500estandarizada,col="red")
 
 ###### EJERCICIO 3c ######
 grilla <- seq(-4,4,by=0.1)
