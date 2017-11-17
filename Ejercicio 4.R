@@ -14,14 +14,14 @@ set.seed(1)
 for (i in 1:3000){
   XpN1[i] <- mean(rbinom(n=i,size=N, prob=P)) 
 }
-plot(XpN1, main="Promedios con sem afuera", xlab = "N", ylab = "Promedio hasta N")
+plot(XpN1, main="Promedios con semilla afuera", xlab = "N", ylab = "Promedio hasta N")
 
 ###### EJERCICIO 1b ######
 for (i in 1:3000){
   set.seed(1)
   XpN1[i] <- mean(rbinom(n=i,size=N, prob=P)) 
 }
-plot(XpN1, main="Promedios con sem adentro", xlab = "N", ylab = "Promedio hasta N")
+plot(XpN1, main="Promedios con semilla adentro", xlab = "N", ylab = "Promedio hasta N")
 
 ###### EJERCICIO 2a ######
 n <- 2

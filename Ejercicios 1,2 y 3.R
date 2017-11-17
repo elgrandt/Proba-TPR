@@ -1,9 +1,9 @@
 ###### INITIALIZATION ######
 XpN1 <- numeric(3000)
-XpN2 = numeric(1000)
-XpN5 = numeric(1000)
-XpN30 = numeric(1000)
-XpN500 = numeric(1000)
+XpN2 <- numeric(1000)
+XpN5 <- numeric(1000)
+XpN30 <- numeric(1000)
+XpN500 <- numeric(1000)
 lambda <- 2
 EX1 <- 1/lambda
 VX1 <- 1/(lambda^2)
@@ -13,7 +13,7 @@ set.seed(1)
 for (i in 1:3000){
   XpN1[i] <- mean(rexp(n=i,rate=lambda)) 
 }
-plot(XpN1, main="Promedios con sem afuera", xlab = "N", ylab = "Promedio hasta N")
+plot(XpN1, main="Promedios con semilla afuera", xlab = "N", ylab = "Promedio hasta N")
 
 ###### EJERCICIO 1b ######
 for (i in 1:3000){
@@ -27,6 +27,7 @@ n <- 2
 for (i in 1:1000){
   XpN2[i] = mean(rexp(n=n, rate=lambda))
 }
+
 qqnorm(XpN2, main="QQ-Plot")
 qqline(XpN2,col="red")
 hist(XpN2, main="Histrograma",prob=T)
@@ -75,10 +76,6 @@ XpN5estandarizada <- ((XpN5)-EX1)/sqrt(VX1/5)
 XpN30estandarizada <- ((XpN30)-EX1)/sqrt(VX1/30)
 XpN500estandarizada <- ((XpN500)-EX1)/sqrt(VX1/500)
 par(mfrow=c(1,4))
-boxplot(XpN2estandarizada,main="Boxplot estandarizado N=2")
-boxplot(XpN5estandarizada,main="Boxplot estandarizado N=5")
-boxplot(XpN30estandarizada,main="Boxplot estandarizado N=30")
-boxplot(XpN500estandarizada,main="Boxplot estandarizado N=500")
 qqnorm(XpN2estandarizada,main="QQ-Plot estandarizado N=2")
 qqline(XpN2estandarizada, col="red")
 qqnorm(XpN5estandarizada,main="QQ-Plot estandarizado N=5")
@@ -87,6 +84,11 @@ qqnorm(XpN30estandarizada,main="QQ-Plot estandarizado N=30")
 qqline(XpN30estandarizada, col="red")
 qqnorm(XpN500estandarizada,main="QQ-Plot estandarizado N=500")
 qqline(XpN500estandarizada, col="red")
+boxplot(XpN2estandarizada,main="Boxplot estandarizado N=2")
+boxplot(XpN5estandarizada,main="Boxplot estandarizado N=5")
+boxplot(XpN30estandarizada,main="Boxplot estandarizado N=30")
+boxplot(XpN500estandarizada,main="Boxplot estandarizado N=500")
+
 ###### EJERCICIO 3c ######
 grilla <- seq(-4,4,by=0.1)
 hist(XpN2estandarizada,main="Histrograma estandarizado N=2",prob=T)
