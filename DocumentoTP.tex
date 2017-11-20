@@ -29,7 +29,7 @@
 	
 	\section{Primer Ejercicio}
 	
-	En este ejercicio, trabajamos con una variable aleatoria exponencial de par\'ametro $\lambda = 2$. Con esta variable generamos 3000 experimentos de $n$ observaciones cada uno, es decir el primer experimento tiene una observaci\'on, el segundo dos y as\'i sucesivamente. 
+	En este ejercicio, trabajamos con una variables aleatorias exponenciales todas con par\'ametro $\lambda = 2$. Con estas variables generamos 3000 experimentos de $n$ observaciones cada uno, es decir el primer experimento tiene una observaci\'on, el segundo dos y as\'i sucesivamente. 
 	
 Si tomamos la media de cada uno de los experimentos y la graficamos podermos ver que queda el siguiente gr\'afico:
 
@@ -42,13 +42,17 @@ Si tomamos la media de cada uno de los experimentos y la graficamos podermos ver
 %	{\includegraphics[scale=0.75]{grafico1}
 %	\centering}
 	
-	Se puede observar que el gr\'afico tiene una pinta similar al de una normal, esto nos sirve para ver una representaci\'on del Teorema Central del L\'imite, que dice que si se tienen $X_1,...,X_n$ variables aleatorias i.i.d. con esperanza $\mu$ y varianza $\sigma^2$ entonces si $n$ es lo suficientemente grande, la variable aleatoria $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$ tiene aproximadamente una distribuci\'on $\mathcal{N}(\mu, \frac{\sigma^2}{n})$.
-	
-	\bigskip
+%	Se puede observar que el gr\'afico tiene una pinta similar al de una normal, esto nos sirve para ver una representaci\'on del Teorema Central del L\'imite, que dice que si se tienen $X_1,...,X_n$ variables aleatorias i.i.d. con esperanza $\mu$ y varianza $\sigma^2$ entonces si $n$ es lo suficientemente grande, la variable aleatoria $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$ tiene aproximadamente una distribuci\'on $\mathcal{N}(\mu, \frac{\sigma^2}{n})$.
 
-	\textbf{\large Diferencias de Gr\'aficos}
+	Podemos observar en el gr\'afico como ocurre la Ley de los Grandes N\'umeros, a medida que crece la cantidad de observaciones, el resultado del experimento se acerca a la esperanza de una variable exponencial con par\'ametro $\lambda = 2$.  
+	
+%	\bigskip
+%
+%	\textbf{\large Diferencias de Gr\'aficos}
 	
 	\smallskip
+	
+	\subsection{Diferencias de Gr\'aficos}
 	
 	Como el t\'itulo ind\'ica, el gr\'afico anterior fu\'e computado en R seteando primero una semilla afuera de un ciclo for. Si a esa semilla la colocamos dentro del ciclo el gr\'afico mostrado cambia al siguiente
 	
@@ -121,16 +125,16 @@ Si tomamos la media de cada uno de los experimentos y la graficamos podermos ver
 	\end{figure}
 	
 	En estos gr\'aficos además de ver a\'un m\'as acentuaci\'on de las caracter\'isticas mencionadas anteriormente, podemos ver que la mayor\'ia de las medias cae cerca de la esperanza de las variables.
-	
-	Luego de ver estos datos podemos inferir lo siguiente, a medida que aumentamos la cantidad de observaciones en cada muestra, estas muestras se acercan cada vez m\'as a la esperanza de la variable, podemos decir entonces que si tomaramos una infinita cantidad de observaciones entonces las muestras deber\'ian converger a la esperanza. De esto mismo habla la Ley de los Grandes N\'umeros, que dice que la media de las observaciones de n variables aleatorias i.i.d. con igual esperanza $\mu$ finita se aproxima en probabilidad a $\mu$.
-	
-	En este ejercicio ocurri\'o algo similar al primero, a medida que aumentamos las observaciones pudimos ver que la distribuci\'on de las medias se iba acercando a la de una variable aleatoria normal.
-	Podemos ver este progreso viendo los gr\'aficos de los boxplots realizados
+	Para marcar ese progreso podemos ver en conjunto los boxplot de los experimentos
 	
 	\begin{figure}[H]
 		\centering
 		\subfloat{\includegraphics[scale = 1]{grafico15}}
 	\end{figure}
+	
+	Luego de ver estos datos podemos inferir lo siguiente, a medida que aumentamos la cantidad de observaciones en cada muestra, estas muestras se acercan cada vez m\'as a la esperanza de la variable, podemos decir entonces que si tomaramos una infinita cantidad de observaciones entonces las muestras deber\'ian converger a la esperanza. De esto mismo habla la Ley de los Grandes N\'umeros, que dice que la media de las observaciones de n variables aleatorias i.i.d. con igual esperanza $\mu$ finita se aproxima en probabilidad a $\mu$.
+	
+	Adem\'as, medida que aumentamos las observaciones de las muestras, pudemos ver que los gr\'aficos la distribuci\'on de las medias se iba acercando al gr\'afico que le corresponde a una variable aleatoria normal (de par\'ametros desconocidos), entonces si tom\'aramos una infinita cantidad de observaciones podr\'iamos decir que la distribuci\'on de las medias es aproximadamente la de una normal (de par\'ametros desconocidos).
 	
 	\newpage
 	
@@ -156,8 +160,8 @@ Si tomamos la media de cada uno de los experimentos y la graficamos podermos ver
 		\subfloat{\includegraphics[scale = 0.3]{grafico19}}
 	\end{figure}
 	
-	En estos QQ-plots se puede ver que a medida que $n$ se hace m\'as grande, la distribuci\'on de la variable estandarizada se parece m\'as a la de una normal.
-	Observando los siguientes boxplots podemos ver que la distribuci\'on se vuelve m\'as sim\'etrica a medida que aumenta $n$:
+	En estos QQ-plots se puede ver que a medida que $n$ se hace m\'as grande, la distribuci\'on de la variable estandarizada se parece m\'as a la de una normal est\'andar de par\'ametros $\mu = 0$ y $\sigma^2 = 1$.
+	Observando los siguientes boxplots tambi\'en podemos ver que la distribuci\'on se vuelve m\'as sim\'etrica a medida que aumenta $n$:
 	
 	\begin{figure}[H]
 		\centering
@@ -173,7 +177,7 @@ Si tomamos la media de cada uno de los experimentos y la graficamos podermos ver
 		\subfloat{\includegraphics[scale = 0.45]{grafico23}}
 	\end{figure}
 	
-	Finalmente si vemos los histogramas con una funci\'on normal superpuesta encima, se puede apreciar como el gr\'afico se asemeja cada vez m\'as a medida que crece la $n$:
+	Finalmente si vemos los histogramas con una funci\'on normal est\'andar superpuesta encima, se puede apreciar como el gr\'afico se asemeja cada vez m\'as a medida que crece la $n$:
 	
 	\begin{figure}[H]
 		\centering
@@ -193,10 +197,136 @@ Si tomamos la media de cada uno de los experimentos y la graficamos podermos ver
 	
 	\section{Cuarto Ejercicio}
 	
+	Para mostrar que la Ley de los Grandes N\'umeros y el Teorema Central del L\'imite no necesariamente son \'unicos de las variables continuas, vamos a realizar los ejercicios anteriores cambiando la distribuci\'on de las variables aleatorias usadas con una diferente y veremos que los resultados son similares.
+	La nueva distribuci\'on de las variables aleatorias va a ser una binomial de par\'ametros $n = 6$ y $p = \frac{1}{9}$.
+	
+	\subsection{Primer Ejercicio Modificado}
+	
+	Realizando el mismo experimento que el primer ejercicio terminamos con los siguientes gr\'aficos:
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.3]{grafico28}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.3]{grafico29}}
+	\end{figure}
+	
+	Podemos ver que pese a que cambiamos la distribuci\'on dela variable aleatoria utilizada por una discreta, terminamos con gr\'aficos que tienen caracter\'isticas similares a las del primer ejercicio original. El gr\'afico que tiene la semilla afuera converge a la esperanza de una variable aleatoria binomial de par\'ametros $n = 6$ y $p = \frac{1}{9}$ y el gr\'afico con la semilla afuera funciona de forma id\'entica al del ejercicio original.
+	
+	\subsection{Segundo Ejercicio Modificado}
+	
+	Cambiando la distribuci\'on de la variable en este experimento, algunos gr\'aficos son un poco distintos pero a\'un asi se comportan de forma similar. Veamos los QQ-plot primero:
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.4]{grafico30}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.4]{grafico31}}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.4]{grafico32}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.4]{grafico33}}
+	\end{figure}
+	
+	Podemos ver que al aumentar el $n$, la distribuci\'on se va pareciendo m\'as a una normal como sucedi\'o el segundo ejercicio.
+	
+	Si vemos los histogramas tambi\'en se nota un comportamiento similar al del segundo ejercicio:
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.4]{grafico34}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.4]{grafico35}}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.4]{grafico36}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.4]{grafico37}}
+	\end{figure}
+	
+	Vemos que los gr\'aficos se parecen a los de una normal a medida que aumentamos la $n$, tambi\'en vemos que cada ves que aumenta $n$, las muestras se acercan al valor de la esperanza.
+	
+	Finalmente viendo los boxplots, vemos que tambi\'en se centran a medida que el $n$ se vuelve m\'as grande, pareci\'endose al boxplot de una normal.
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.45]{grafico38}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.45]{grafico39}}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.45]{grafico40}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.45]{grafico41}}
+	\end{figure}
+	
+	\subsection{Tercer Ejercicio Modificado}
+	
+	Si estandarizamos las variables con distribuci\'on binomial de la misma forma que hicimos en el tercer ejercico original obtenemos los siguientes gr\'aficos:
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.4]{grafico42}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.4]{grafico43}}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.45]{grafico44}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.45]{grafico45}}
+	\end{figure}
+	
+	Se puede ver que mientras más aumenta la $n$, el gr\'afico se parece cada ves m\'as a la recta que seguir\'ia una normal de par\'ametros $\mu = 0$ y $\sigma^2 = 1$.
+	
+	Los boxplots de los experimentos se ven de la siguiente forma:
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.4]{grafico46}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.4]{grafico47}}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.45]{grafico48}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.45]{grafico49}}
+	\end{figure}
+	
+	Podemos ver que los boxplots tambi\'en se parecen a los de una normal de par\'ametros $\mu = 0$ y $\sigma^2 = 1$ a medida que $n$ aumenta.
+	
+	Finalmente viendo los histogramas:
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.3]{grafico50}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.3]{grafico51}}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\subfloat{\includegraphics[scale = 0.3]{grafico52}}
+		\hfill
+		\subfloat{\includegraphics[scale = 0.3]{grafico53}}
+	\end{figure}
+	
+	Podemos ver que a medida que aumenta $n$, el gr\'afico se parece cada vez m\'as el de una normal de par\'ametros $\mu = 0$ y $\sigma^2 = 1$. 
+
 	\newpage
 	
 	\section{Conclusiones}
 	
 	\newpage
-	
+
 \end{document}
